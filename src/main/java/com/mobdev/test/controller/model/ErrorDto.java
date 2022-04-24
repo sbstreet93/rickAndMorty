@@ -1,12 +1,18 @@
 package com.mobdev.test.controller.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.http.HttpStatus;
 
 import java.time.ZonedDateTime;
 
+@ApiModel(value = "ErrorDto", description = "Object to map errors from Rick and Morty server")
 public class ErrorDto {
+    @ApiModelProperty("Error message")
     private final String message;
+    @ApiModelProperty("Error status")
     private final HttpStatus httpStatus;
+    @ApiModelProperty("Error time")
     private final ZonedDateTime timestamp;
 
     public ErrorDto(String message, HttpStatus httpStatus, ZonedDateTime timestamp) {
