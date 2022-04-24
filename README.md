@@ -27,5 +27,7 @@ Una vez realizado el paso anterior ejecutar el siguiente comando para ejecutar e
   
   Spring Boot
   
+  Mockito
+  
 ------------------
 #### URL swagger: http://localhost:8080/swagger-ui.html
