@@ -2,10 +2,7 @@ package com.mobdev.test.controller;
 
 import com.mobdev.test.business.CharacterBusiness;
 import com.mobdev.test.controller.model.CharacterDto;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +29,7 @@ public class CharacterController {
             @ApiResponse(code = 404, message = "Character does not found"),
             @ApiResponse(code = 500, message = "Internal errors"),
     })
-    public ResponseEntity<Object> getById(@PathVariable Integer id){
+    public ResponseEntity<Object> getById(@ApiParam(value = "Character id") @PathVariable Integer id){
         return new ResponseEntity<>(business.getById(id), HttpStatus.OK);
     }
 }
